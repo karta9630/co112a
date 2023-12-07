@@ -11,4 +11,49 @@
 // "white" in every pixel;
 // the screen should remain fully clear as long as no key is pressed.
 
-// Put your code here.
+// Put your code here. 16384 24575
+(FOREVER)
+  @16384
+  D=A
+  @i
+  M=D
+
+(WHILE)
+
+  @24576
+  D=A
+  @i
+  D=M-D 
+  @WEND
+  D;JGE
+
+  @color
+  M=0   // 白色
+
+  @24576
+  D=M
+
+  @NEXT
+  D;JEQ
+
+  @color
+  M=-1  // 黑色
+
+(NEXT)
+
+  @color
+  D=M
+  @i
+  A=M
+  M=D
+
+  @i
+  M=M+1
+
+  @WHILE
+  0;JMP
+
+(WEND)
+
+  @FOREVER
+  0;JMP
