@@ -1,9 +1,11 @@
-# 04 Fill  參考
+# 1-5章都寫好了
+
+## 4 Fill  參考
 https://people.duke.edu/~nts9/asmtoml/Fill.asm 
 
 https://github.com/ccc112a/cpu2os/blob/master/03-nand2tetris/04/fill/Fill.asm
 
-# 05 CPU 參考 以及問范楊玄怎麼寫 大概理解5成
+## 5 CPU 參考 以及問范楊玄怎麼寫 大概理解5成
 https://people.duke.edu/~nts9/logicgates/CPU.hdl 
 
 https://github.com/wrr606/co112a/blob/master/05/CPU.hdl
