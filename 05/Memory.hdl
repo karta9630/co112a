@@ -22,10 +22,17 @@
  * Screen and Keyboard chip specifications given in the book.
  */
 
+
 CHIP Memory {
     IN in[16], load, address[15];
     OUT out[16];
 
     PARTS:
+  //24576 keyboard
     // Put your code here:
+    DMux(in=load,sel=address[14],a=ram16kload,b=screenload);
+    RAM16K(in=in,address=address[0..13],load=ram16kload,out=ram16kout);
+    Screen(in=in,address=address[0..12],load=screenload,out=screenout);
+    Keyboard(out=keyboardout);
+    Mux4Way16(a=ram16kout,b=ram16kout,c=screenout,d=keyboardout,sel=address[13..14],out=out);
 }
