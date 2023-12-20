@@ -5,7 +5,7 @@ https://people.duke.edu/~nts9/asmtoml/Fill.asm
 
 https://github.com/ccc112a/cpu2os/blob/master/03-nand2tetris/04/fill/Fill.asm
 
-## 5章 CPU 問范楊玄怎麼寫以及參考以下資料 大概理解4成
+## 5章 CPU 問范楊玄怎麼寫以及參考以下資料 (大概理解4成)
 https://people.duke.edu/~nts9/logicgates/CPU.hdl 
 
 https://github.com/wrr606/co112a/blob/master/05/CPU.hdl
