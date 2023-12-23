@@ -17,7 +17,7 @@ out = "111"
 cnt=0
 import os
 filename = "input.asm"
-output_filename = "output.hack"
+output_filename = "mult.hack"
 with open(output_filename, "w") as clear_file:
     clear_file.write("")
 
@@ -52,14 +52,17 @@ for line in lines:
 
         elif  line.startswith("("):
             continue
-        #-------A語言---------
-#---------C語言--------
+        #-------A指令---------
+#---------C指令--------
         #把76行 if else 並進去
         else :
             find=line.find("=")
             word= line.find(";")
             
             if find !=-1 and word!=-1:
+                label=''
+                two=''
+                three=''
                 label = line[0:find].strip()
                 # print(label)
                 dest_code = dest.get(label,"").strip()
@@ -73,12 +76,17 @@ for line in lines:
 
 
             elif find !=-1 and word==-1:
+                label=''
+                two=''
+                three=''
                 label = line[0:find].strip()
                 # print(label)
                 dest_code = dest.get(label,"").strip()
                 # print(dest_code)
-
-                two = line[find+1:word].strip()
+                 
+                two = line[find+1:].strip()
+                if two=='0' :
+                    two =""
                 comp_code = comp.get(two, "").strip()
 
                 three = ""
@@ -86,11 +94,13 @@ for line in lines:
 
 
             elif find ==-1 and word!=-1:
+                label=''
+                two=''
+                three=''
                 label = line[0:word].strip()
                 # print(label)
                 dest_code = dest.get(label,"").strip()
                 # print(dest_code)
-
                 two=""
                 comp_code = comp.get(two, "").strip()
 
@@ -99,6 +109,9 @@ for line in lines:
 
 
             elif find ==-1 and word==-1:
+                label=''
+                two=''
+                three=''
                 label = line[0:word].strip()
                 # print(label)
                 dest_code = dest.get(label,"").strip()
@@ -114,7 +127,7 @@ for line in lines:
             binary_code=(out+comp_code+dest_code+jump_code)
         print(binary_code)
 
-        output_filename = "output.hack"
+        output_filename = "mult.hack"
         output_filepath = os.path.join(output_filename)
 
         with open(output_filepath, "a") as output_file:
